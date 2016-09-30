@@ -1,3 +1,6 @@
 from django.shortcuts import render
+from .models import Staff
 
-# Create your views here.
+def staff_list(request):
+    staff = Staff.objects.all()
+    return render(request, 'autesha/staff_list.html', {'staff': staff})
